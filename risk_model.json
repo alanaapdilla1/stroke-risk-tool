@@ -1,0 +1,200 @@
+{
+  "meta": {
+    "name": "EVCH Additive Risk Score",
+    "version": "1.0.0",
+    "disclaimer": "Screening tool only. Not a diagnostic instrument."
+  },
+
+  "questions": [
+
+    {
+      "id": "edad",
+      "label": "Edad (años)",
+      "type": "numeric",
+      "range": { "min": 0, "max": 120 },
+      "category": "Datos Personales",
+      "thresholds": [
+        { "max": 54, "points": 1 },
+        { "max": 64, "points": 2 },
+        { "min": 65, "points": 3 }
+      ]
+    },
+    {
+      "id": "sexo",
+      "label": "Sexo",
+      "type": "categorical",
+      "category": "Datos Personales",
+      "options": { "Mujer": 1, "Hombre": 2 }
+    },
+
+    {
+      "id": "pas",
+      "label": "Presion Arterial Sistólica (mmHg)",
+      "type": "numeric",
+      "category": "Enfermedades no Transmisibles",
+      "range": { "min": 50, "max": 300 },
+      "thresholds": [
+        { "max": 129, "points": 1 },
+        { "max": 160, "points": 2 },
+        { "min": 161, "points": 3 }
+      ]
+    },
+    {
+      "id": "pad",
+      "label": "Presion Arterial Diastólica (mmHg)",
+      "type": "numeric",
+      "category": "Enfermedades no Transmisibles",
+      "range": { "min": 25, "max": 200 },
+      "thresholds": [
+        { "max": 129, "points": 0 },
+        { "max": 160, "points": 0 },
+        { "min": 161, "points": 0 }
+      ]
+    },
+    {
+      "id": "glucosa",
+      "label": "Glucosa (mg / dL)",
+      "type": "numeric",
+      "range": { "min": 25, "max": 600 },
+      "category": "Enfermedades no Transmisibles",
+      "thresholds": [
+        { "max": 119, "points": 1 },
+        { "max": 200, "points": 2 },
+        { "min": 201, "points": 3 }
+      ]
+    },
+
+    {
+      "id": "embarazo",
+      "label": "Embarazo",
+      "type": "binary",
+      "category": "Antecedentes Médicos",
+      "options": { "NO": 1, "SI": 2 }
+    },
+    {
+      "id": "nafld",
+      "label": "NAFLD",
+      "type": "binary",
+      "category": "Antecedentes Médicos",
+      "options": { "NO": 1, "SI": 2 }
+    },
+    {
+      "id": "fibrosis",
+      "label": "Fibrosis Hepática Avanzada",
+      "type": "binary",
+      "category": "Antecedentes Médicos",
+      "options": { "NO": 1, "SI": 2 }
+    },
+
+    {
+      "id": "apo_mut",
+      "label": "Mutación Gen Apolipoproteína",
+      "type": "binary",
+      "category": "Mutaciones",
+      "options": { "NO": 1, "SI": 2 }
+    },
+    {
+      "id": "amy_mut",
+      "label": "Mutación Proteína Amiloides",
+      "type": "binary",
+      "category": "Mutaciones",
+      "options": { "NO": 1, "SI": 2 }
+    },
+    {
+      "id": "microbleed",
+      "label": "Microsangrado Cerebrales Previos",
+      "type": "categorical",
+      "category": "Antecedentes Médicos",
+      "options": { 
+        "Cero (0)": 1, 
+        "Hasta cuatro (<=4)": 2,  
+        "Cinco o más (5+)": 3
+      }
+    },
+
+    {
+      "id": "alcoholismo",
+      "label": "Alcoholismo Crónico",
+      "type": "binary",
+      "category": "Toxicomanías",
+      "options": { "NO": 1, "SI": 2 }
+    },
+    {
+      "id": "abuso_alcohol",
+      "label": "Abuso de Alcohol",
+      "type": "binary",
+      "category": "Toxicomanías",
+      "options": { "NO": 1, "SI": 3 }
+    },
+    {
+      "id": "sustancias",
+      "label": "Abuso de Sustancias",
+      "type": "binary",
+      "category": "Toxicomanías",
+      "options": { "NO": 1, "SI": 2 }
+    },
+    {
+      "id": "metanfetaminas",
+      "label": "Abuso de Metanfetaminas",
+      "type": "binary",
+      "category": "Toxicomanías",
+      "options": { "NO": 1, "SI": 2 }
+    },
+
+    {
+      "id": "meningioma",
+      "label": "Meningioma",
+      "type": "binary",
+      "category": "Cáncer",
+      "options": { "NO": 1, "SI": 2 }
+    },
+    {
+      "id": "glioblastoma",
+      "label": "Glioblastoma",
+      "type": "binary",
+      "category": "Cáncer",
+      "options": { "NO": 1, "SI": 2 }
+    },
+    {
+      "id": "hemangioblastoma",
+      "label": "Hemangioblastoma",
+      "type": "binary",
+      "category": "Cáncer",
+      "options": { "NO": 1, "SI": 2 }
+    },
+    {
+      "id": "adenoma",
+      "label": "Adenoma Pituitario",
+      "type": "binary",
+      "category": "Cáncer",
+      "options": { "NO": 1, "SI": 2 }
+    },
+    {
+      "id": "metastasis",
+      "label": "Metástasis Cerebral",
+      "type": "binary",
+      "category": "Cáncer",
+      "options": { "NO": 1, "SI": 2 }
+    },
+
+    {
+      "id": "anticonceptivos",
+      "label": "Anticonceptivos Orales",
+      "type": "binary",
+      "category": "Medicamentos",
+      "options": { "NO": 1, "SI": 2 }
+    },
+    {
+      "id": "antiagregacion",
+      "label": "Terapia Antiplaquetaria",
+      "type": "categorical",
+      "category": "Medicamentos",
+      "options": {
+        "Ninguno": 1,
+        "Simple": 2,
+        "Dual": 3
+      }
+    }
+    
+  ]
+}
